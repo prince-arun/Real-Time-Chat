@@ -14,3 +14,18 @@
   font-size: 1.5rem;
   margin-top: 2rem;
 }
+/* ----------------------------Ad---------------- */
+.box-center {
+  text-align: center;
+}
+.box-center h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.box-center p {
+  font-size: 1.2rem;
+}
+.box-center h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
