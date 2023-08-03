@@ -15,6 +15,10 @@
   margin-top: 2rem;
 }
 /* ----------------------------Ad---------------- */
+.ad {
+  background-color: rgb(246, 246, 246);
+}
+
 .box-center {
   text-align: center;
 }
@@ -28,4 +32,22 @@
 .box-center h1 {
   font-size: 3rem;
   font-weight: bold;
+}
+
+.btn-submit {
+  background-color: rgb(157, 187, 248);
+  width: 380px;
+}
+.btn-submit-sign {
+  background-color: rgb(157, 187, 248);
+  width: 320px;
+}
+
+.signIn {
+  height: 100vh;
+  background: rgb(157, 187, 248);
+}
+.signIn-box {
+  width: 450px;
+  margin-top: 160px;
 }

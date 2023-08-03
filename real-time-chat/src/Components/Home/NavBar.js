@@ -31,20 +31,34 @@ const NavBar = () => {
                 onClick={handleShow}
                 className="px-5 py-2"
               >
-                Login
+                Register
               </Button>
 
-              <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                  <Modal.Title>Login Here...</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
+              <Modal show={show} onHide={handleClose} className="mx-4">
+                {/* <Modal.Header closeButton>
+                  <Modal.Title>Signal</Modal.Title>
+                </Modal.Header> */}
+                <div closeButton className="text-center mt-3">
+                  <h2>Register</h2>
+                </div>
+                <Modal.Body className="mx-5">
                   <Form>
+                    <Form.Group
+                      className="mb-3 "
+                      controlId="exampleForm.ControlInput1"
+                    >
+                      <Form.Label>Username</Form.Label>
+                      <Form.Control
+                        type="text"
+                        placeholder="username"
+                        autoFocus
+                      />
+                    </Form.Group>
                     <Form.Group
                       className="mb-3"
                       controlId="exampleForm.ControlInput1"
                     >
-                      <Form.Label>Email address</Form.Label>
+                      <Form.Label>Email </Form.Label>
                       <Form.Control
                         type="email"
                         placeholder="name@example.com"
@@ -53,21 +67,36 @@ const NavBar = () => {
                     </Form.Group>
                     <Form.Group
                       className="mb-3"
-                      controlId="exampleForm.ControlTextarea1"
+                      controlId="exampleForm.ControlInput1"
                     >
-                      <Form.Label>Example textarea</Form.Label>
-                      <Form.Control as="textarea" rows={3} />
+                      <Form.Label>Password</Form.Label>
+                      <Form.Control
+                        type="password"
+                        placeholder="name@example.com"
+                        autoFocus
+                      />
+                    </Form.Group>
+                    <Form.Group
+                      className="mb-3"
+                      controlId="exampleForm.ControlInput1"
+                    >
+                      <Form.Label>Add Photo</Form.Label>
+                      <Form.Control
+                        type="file"
+                        placeholder="name@example.com"
+                        autoFocus
+                      />
                     </Form.Group>
                   </Form>
                 </Modal.Body>
-                <Modal.Footer>
-                  <Button variant="secondary" onClick={handleClose}>
-                    Close
+                <div className="text-center ">
+                  <Button onClick={handleClose} className="  btn-submit">
+                    Register
                   </Button>
-                  <Button variant="primary" onClick={handleClose}>
-                    Save Changes
-                  </Button>
-                </Modal.Footer>
+                </div>
+                <Form.Label className="text-center mt-3">
+                  Already Have an account Login
+                </Form.Label>
               </Modal>
 
               {/* ---------------------------------------------------------------------------- */}
