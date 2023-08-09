@@ -12,6 +12,8 @@ import { getDoc, doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { reauthenticateWithCredential, EmailAuthProvider } from "firebase/auth";
 import Delete from "../svg/Delete";
 import { useNavigate } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import { TbArrowBackUpDouble } from "react-icons/tb";
 
 const Profile = () => {
   const [img, setImg] = useState("");
@@ -195,37 +197,54 @@ const Profile = () => {
     }
   };
 
+  const gBack = () => {
+    navigate(-1);
+  };
+
   //----------------------------------------
   return user ? (
-    <section>
-      <div className="profile_container">
-        <div className="img_container">
-          <img src={user.avatar || Img} alt="avatar" />
-          <div className="overlay">
-            <div>
-              <label htmlFor="photo">
-                <Camera />
-              </label>
-              {user.avatar ? <Delete deleteImage={deleteImage} /> : null}
-              <input
-                type="file"
-                accept="image/*"
-                style={{ display: "none" }}
-                id="photo"
-                onChange={(e) => setImg(e.target.files[0])}
-              />
+    <div>
+      <div className="back" onClick={gBack}>
+        <h3>
+          {" "}
+          <TbArrowBackUpDouble />
+          Back...
+        </h3>
+      </div>
+
+      <div className="prof-con">
+        <div className="profile_container">
+          <div className="img_container">
+            <img src={user.avatar || Img} alt="avatar" />
+            <div className="overlay">
+              <div>
+                <label htmlFor="photo">
+                  <Camera />
+                </label>
+                {user.avatar ? <Delete deleteImage={deleteImage} /> : null}
+                <input
+                  type="file"
+                  accept="image/*"
+                  style={{ display: "none" }}
+                  id="photo"
+                  onChange={(e) => setImg(e.target.files[0])}
+                />
+              </div>
             </div>
           </div>
+          <div className="text_container">
+            <h3 className="p-cen">{user.name}</h3>
+            <p>{user.email}</p>
+            <hr />
+            <small>Joined on: {user.createdAt.toDate().toDateString()}</small>
+          </div>
+
+          <Button onClick={deleteAccount} variant="outline-danger">
+            Delete Account
+          </Button>
         </div>
-        <div className="text_container">
-          <h3>{user.name}</h3>
-          <p>{user.email}</p>
-          <hr />
-          <small>Joined on: {user.createdAt.toDate().toDateString()}</small>
-        </div>
-        <button onClick={deleteAccount}>Delete Account</button>
       </div>
-    </section>
+    </div>
   ) : null;
 };
 

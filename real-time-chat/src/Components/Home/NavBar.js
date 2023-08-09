@@ -90,78 +90,10 @@ const NavBar = () => {
               </Button>
 
               <Modal show={show} onHide={handleClose} className="mx-4">
-                {/* <Modal.Header closeButton>
-                  <Modal.Title>Signal</Modal.Title>
-                </Modal.Header> */}
                 <div className="text-center mt-3">
                   <h2>Register</h2>
                 </div>
                 <Modal.Body className="mx-5">
-                  {/* <Form onSubmit={handleSubmit}>
-                    <Form.Group
-                      className="mb-3 "
-                      // controlId="exampleForm.ControlInput1"
-                    >
-                      <Form.Label>Username</Form.Label>
-                      <Form.Control
-                        type="text"
-                        placeholder="username"
-                        // autoFocus
-                        // value={}
-                        onChange={handleChange}
-                      />
-                    </Form.Group>
-                    <Form.Group
-                      className="mb-3"
-                      // controlId="exampleForm.ControlInput1"
-                    >
-                      <Form.Label>Email </Form.Label>
-                      <Form.Control
-                        type="email"
-                        placeholder="name@example.com"
-                        // autoFocus
-                        // value={email}
-                        onChange={handleChange}
-                      />
-                    </Form.Group>
-                    <Form.Group
-                      className="mb-3"
-                      // controlId="exampleForm.ControlInput1"
-                    >
-                      <Form.Label>Password</Form.Label>
-                      <Form.Control
-                        type="password"
-                        placeholder="Password"
-                        // autoFocus
-                        // value={password}
-                        onChange={handleChange}
-                      />
-                    </Form.Group>
-                    <Form.Group
-                      className="mb-3 d-none"
-                      // controlId="exampleForm.ControlInput1"
-                    >
-                      <Form.Label>Add Photo</Form.Label>
-                      <Form.Control
-                        type="file"
-                        placeholder="name@example.com"
-                        // autoFocus
-                        id="file"
-                      />
-                    </Form.Group> */}
-                  {/* <label htmlFor="file" className="p-up">
-                      <img src={profile} alt="image upload" width={50} />
-                      <span>Upload Avatar</span>
-                    </label> */}
-                  {/* {error ? <p className="error">{error}</p> : null}
-
-                    <div className="text-center ">
-                      <Button type="submit" className="  btn-submit">
-                        Register
-                      </Button>
-                    </div>
-                  </Form> */}
-
                   {/* ------------------------------------- */}
                   <form className="form" onSubmit={handleSubmit}>
                     <div className="input_container">
@@ -193,9 +125,11 @@ const NavBar = () => {
                     </div>
                     {error ? <p className="error">{error}</p> : null}
                     <div className="btn_container">
-                      <button className="btn" disabled={loading}>
-                        {loading ? "Creating ..." : "Register"}
-                      </button>
+                      {/* <button className="btn" disabled={loading}> */}
+                      <Button variant="success" type="submit">
+                        {loading ? "Signing Up ..." : "Register"}
+                      </Button>
+                      {/* </button> */}
                     </div>
                   </form>
                 </Modal.Body>

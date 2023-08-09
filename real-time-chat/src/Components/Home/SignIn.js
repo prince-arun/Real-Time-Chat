@@ -113,9 +113,11 @@ const SignIn = () => {
                 </div>
                 {error ? <p className="error">{error}</p> : null}
                 <div className="btn_container">
-                  <button className="btn" disabled={loading}>
+                  {/* <button className="btn" disabled={loading}> */}
+                  <Button variant="primary" type="submit">
                     {loading ? "Logging in ..." : "Login"}
-                  </button>
+                  </Button>
+                  {/* </button> */}
                 </div>
               </form>
               <Form.Label className="text-center mt-3 ms-5  ">
